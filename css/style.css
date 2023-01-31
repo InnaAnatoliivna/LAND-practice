@@ -61,9 +61,10 @@ ul {
 
 
 .header-hero-wrap {
-    background-color: rgb(46, 44, 44);
+    background-color: var(--dark-color-text);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(.jpg), url(../images/top-bc.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
 
     width: 1360px;
     margin: 0 auto;
@@ -409,6 +410,7 @@ width: calc((100%-40)/3);
     padding-bottom: 80px;
     background-color: #F4F4F4;
     background-image: url(../images/req-1.jpg);
+    background-size: 670px 454px;
     background-repeat: no-repeat;
 
     margin: 0 auto;
@@ -429,6 +431,13 @@ width: calc((100%-40)/3);
     margin-left: 690px;
     /* width: 690px; */
 }
+
+.request-label {
+    display: flex;
+    flex-direction: column;  
+    align-items: start;
+}
+
 
 .request-title {
     margin-bottom: 32px;
