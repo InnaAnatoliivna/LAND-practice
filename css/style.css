@@ -8,7 +8,7 @@ body {
     --dark-color-text: #333333;
     --light-color-text: #FFFFFF;
     --accent-color: #28A745;
-    --typical-pasive-color: #186029;
+    --typical-pasive-color: #1c8332e0;
 }
 
 h1,
@@ -43,7 +43,7 @@ ul {
     width: 1334px;
     padding: 0 15px;
     margin: 0 auto;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 
 /* .visually-hidden {
@@ -76,41 +76,59 @@ ul {
 } */
 .header-container {
     display: flex;
+    justify-content: space-between;
+    padding-left: 13px;
+    padding-right: 13px;
 
 }
 
 .header-logo-icon {
     display: flex;
-    padding-top: 24px;
-    padding-bottom: 24px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1.5px;
+    padding-bottom: 1.5px;
 }
 
 .header-icon {
     fill: var(--accent-color);
 }
 .header-logo-text {
-
     font-weight: var(--typical-fW);
     font-size: 35px;
     line-height: 1.2;
     color: var(--light-color-text);
 }
-.logo-text-wrap {
 
+.header-logo-text .logo-text-wrap {
+    padding-right: 10px;
+}
+
+.logo-text-wrap {
     color: var(--accent-color);
 }
 
 .header-list {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
 }
-/* .header-item {
 
-} */
 .header-link {
+    min-width: calc((100%-160px)/5);
+    padding-top: 8.5px;
+    padding-bottom: 8.5px;
+    transition: color 200ms linear;
+
     font-weight: var(--typical-fW);
     font-size: 18px;
     line-height: 1.5;
-    counter-reset: var(--light-color-text);
+    color: var(--light-color-text);
+}
+.header-link:is(:hover, :focus) {
+    color: var(--accent-color);
 }
 
 /* ---------------- HERO -------------------- */
@@ -118,7 +136,6 @@ ul {
     padding-top: 230px;
     padding-bottom: 282px;
 }
-
 
 .hero-title {
     margin-bottom: 24px;
@@ -145,6 +162,7 @@ ul {
     margin: 0 auto;
     border-radius: 4px;
     padding:  11px 36px 12px 37px;
+    transition: background-color 200ms linear;
 
     background-color: var(--accent-color);
     font-weight: var(--typical-fW);
@@ -152,11 +170,24 @@ ul {
     line-height: 1.5;
     color: var(--light-color-text);
 }
-.hero-btn::before {
+/* .hero-btn::before {
     content: '>';
+} */
+
+
+.hero-btn:is(:hover, :focus){
+    background-color: var(--typical-pasive-color);
 }
-
-
+.hero-container {
+    position: relative;
+}
+.hero-icon {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-58px, 70px);
+fill: var(--light-color-text);
+}
 /* ---------------- ABOUT --------------------- */
 
 .about {
@@ -210,9 +241,14 @@ background-color: var(--accent-color);
     padding: 11px 35px 12px 34px;
     border-color: var(--light-color-text);
     border-radius: 4px;
+    transition: background-color 200ms linear;
 
     background-color: var(--accent-color);
     color: var(--light-color-text);
+}
+
+.about-btn:is(:hover, :focus) {
+    background-color: var(--typical-pasive-color);
 }
 
 
@@ -263,15 +299,14 @@ background-color: var(--accent-color);
 }
 
 /* .cases-item {
-    width: calc((100%-40)/3);
-}*/
+    width: calc((100%-40px)/3);
+} */
 /* .cases-img {
 } */
 
 /* ---------------- BLOG --------------------- */
 
 .blog {
-
     padding-top: 80px;
     padding-bottom: 80px;
     background-color: #0284D0;
@@ -323,11 +358,16 @@ max-width: 606px;
     background-color: #0284D0;
     border-color: var(--light-color-text);
     border-radius: 4px;
+    transition: background-color 200ms linear;
 
     font-weight: var(--typical-fW);
     font-size: 18px;
     line-height: 1.5;
     color: var(--light-color-text);
+}
+
+.blog-btn:is(:hover, :focus) {
+    background-color: #0066a1dc;
 }
 
 
@@ -365,16 +405,14 @@ max-width: 606px;
     text-align: center;
     color: var(--dark-color-text);
 }
+
 .team-list {
     display: flex;
+    gap: 20px;
 }
-
 .team-item {
-width: calc((100%-40)/3);
+width: calc((100%-40px)/3);
 }
-
-/* .team-img {
-} */
 
 .team-name {
     margin-top: 20px;
@@ -393,7 +431,42 @@ width: calc((100%-40)/3);
     line-height: calc(28/18);
     text-align: center;
     color: var(--dark-color-text);
+}
 
+.team-overlay {
+    position: relative;
+    overflow:hidden;
+}
+
+.team-soc-list {
+    position: absolute;
+    top: 0;
+    padding-top: 130px;
+    padding-bottom: 121px;
+    height: 100%;
+    width: 100%;
+    transform: translateY(100%);
+    transition: transform 200ms linear;
+    display: flex;  
+    justify-content: center;
+    gap: 25px;
+
+    background-image: url(../images/team-2-0.png);
+}
+
+/* .team-overlay:hover .team-soc-list {
+transform: translate(0);
+} */
+
+.overlay-card:is(:hover, :focus) .team-soc-list {
+    transform: translate(0);
+    }
+
+.team-icon {
+    fill: var(--light-color-text);
+}
+.team-icon:hover {
+    fill: var(--accent-color)
 }
 
 /* --------------- REQUEST --------------------- */
@@ -436,7 +509,7 @@ width: calc((100%-40)/3);
     color: var(--dark-color-text);
 }
 
-.requesr-input {
+.request-input {
     padding-top: 10px;
     padding-bottom: 1px;
     padding-left: 8px;
@@ -444,13 +517,29 @@ width: calc((100%-40)/3);
     height: 40px;
     margin-top: 32px;
     border: none;
+    outline: none;
 
     font-weight: var(--typical-next-fw);
     font-size: 18px;
     line-height: calc(28/18);
+    color: var(--dark-color-text);
+}
+
+.request-input::placeholder {
     color: #808080;
+    font-size: 18px;
+}
 
+.request-input:focus {
+    border: 1px solid #767575e6;
+}
 
+.request-input:not(:focus):not(:placeholder-shown):valid {
+    background-color: rgba(118, 192, 43, 0.211);
+}
+
+.request-input:not(:focus):not(:placeholder-shown):invalid {
+    background-color: rgba(221, 95, 37, 0.227);
 }
 
 .request-btn {
@@ -459,11 +548,17 @@ padding: 8px 295px;
 background-color: var(--accent-color);
 border-radius: 5px;
 border-color: var(--accent-color);
+transition: background-color 200ms linear;
+outline: none;
 
 font-weight: var(--typical-fw);
 font-size: 18px;
 line-height: calc(25/18);
 color: var(--light-color-text);
+}
+
+.request-btn:is(:hover, :focus) {
+    background-color: var(--typical-pasive-color);
 }
 
 /* --------------- FOOTER --------------------- */
@@ -478,17 +573,23 @@ color: var(--light-color-text);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 6px;
     gap: 24px;
+    width: calc((100%-72p)/4);
+    margin: 0 auto;
 }
 
 /* .footer-soc-item {
-    width: calc((100%-72)/4);
 } */
+
 .footer-icon {
     fill: var(--light-color-text);
+    transition: fill 200ms linear;
+}
+.footer-icon:is(:hover, :focus) {
+    fill: var(--accent-color);
 }
 .footer-text {
+    margin-top: 6px;
 
     font-weight: var(--typical-fW);
     font-size: 18px;
