@@ -161,8 +161,15 @@ ul {
     display: block;
     margin: 0 auto;
     border-radius: 4px;
+    border-color: var(--accent-color);
     padding:  11px 36px 12px 37px;
-    transition: background-color 200ms linear;
+    transition: background-color 200ms linear scale(1);
+
+
+    /* animation-name: changeTransformScale;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; */
 
     background-color: var(--accent-color);
     font-weight: var(--typical-fW);
@@ -175,8 +182,10 @@ ul {
 } */
 
 
+
 .hero-btn:is(:hover, :focus){
     background-color: var(--typical-pasive-color);
+    border-color: var(--typical-pasive-color);
 }
 .hero-container {
     position: relative;
@@ -186,8 +195,22 @@ position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-58px, 70px);
+transition: transform 250ms linear;
 fill: var(--light-color-text);
 }
+
+.hero-icon {
+    /* animation: changeTransform 2000ms linear infinite;  */
+    animation-name: changeTransform;
+    animation-duration: 800ms;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+/* .hero-icon:is(:hover, :focus) {
+    animation-play-state: paused;
+} */
+
 /* ---------------- ABOUT --------------------- */
 
 .about {
@@ -245,6 +268,10 @@ background-color: var(--accent-color);
 
     background-color: var(--accent-color);
     color: var(--light-color-text);
+}
+
+.about-btn {
+    animation: changeTransformScale 1500ms infinite linear alternate;
 }
 
 .about-btn:is(:hover, :focus) {
@@ -366,6 +393,10 @@ max-width: 606px;
     color: var(--light-color-text);
 }
 
+.blog-btn {
+    animation: changeTransformScale 1500ms infinite linear alternate;
+}
+
 .blog-btn:is(:hover, :focus) {
     background-color: #0066a1dc;
 }
@@ -460,7 +491,8 @@ transform: translate(0);
 
 .overlay-card:is(:hover, :focus) .team-soc-list {
     transform: translate(0);
-    }
+    
+}
 
 .team-icon {
     fill: var(--light-color-text);
@@ -469,6 +501,9 @@ transform: translate(0);
     fill: var(--accent-color)
 }
 
+.overlay-card:is(:hover, :focus) img {
+    box-shadow: 2px 2px 12px 2px rgba(0, 0, 0, 0.4);
+}
 /* --------------- REQUEST --------------------- */
 
 .request {
@@ -598,3 +633,15 @@ color: var(--light-color-text);
     color: var(--light-color-text);
 }
 
+/* ----ANIMATION----- */
+
+@keyframes changeTransform {
+    0% {transform: translate(-58px, 70px);}
+    100% {transform: translate(-65px, 70px);}
+}
+
+@keyframes changeTransformScale {
+    0% {transform: scale(1.1);}
+    /* 50% {transform: scale(1.2);} */
+    100% {transform: scale(1.2);}
+} 
