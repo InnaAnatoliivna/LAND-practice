@@ -268,6 +268,9 @@ background-color: var(--accent-color);
 
     background-color: var(--accent-color);
     color: var(--light-color-text);
+    font-weight: var(--typical-fW);
+    font-size: 18px;
+    line-height: calc(28/18);
 }
 
 .about-btn {
