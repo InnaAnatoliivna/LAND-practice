@@ -40,7 +40,7 @@ ul {
 }
 
 .container {
-    width: 1334px;
+
     padding: 0 15px;
     margin: 0 auto;
     /* outline: 1px solid red; */
@@ -59,21 +59,14 @@ ul {
     width: 1px;
 } */
 
-
-.header-hero-wrap {
-    background-color: var(--dark-color-text);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(.jpg), url(../images/top-bc.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    width: 1360px;
-    margin: 0 auto;
-}
-
 /*---------------- HEADER --------------------- */
 
-/* .header{
-} */
+.header{
+    position: absolute;
+    top:0;
+    left: 85px;
+    /* right: 85px; */
+}
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -133,8 +126,16 @@ ul {
 
 /* ---------------- HERO -------------------- */
 .hero {
-    padding-top: 230px;
+    padding-top: 276px;
     padding-bottom: 282px;
+
+    background-color: var(--dark-color-text);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(.jpg), url(../images/top-bc.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    max-width: 1360px;
+    margin: 0 auto;
 }
 
 .hero-title {
@@ -145,6 +146,11 @@ ul {
     font-size: 55px;
     line-height: 1.2;
     color: var(--color-hero-text);
+}
+.container {
+}
+.hero-container {
+    position: relative;
 }
 
 .hero-subtitle {
@@ -344,13 +350,12 @@ background-color: var(--accent-color);
 
 .blog-container {
     position: relative;
-    padding-left: 690px;
     height: 300px;
 }
 
 .blog-img{
     position: absolute;
-    left: -12px;
+    right: -12px;
     top: -80px;
 }
 
