@@ -23,7 +23,10 @@ p {
 
 ul {
     margin: 0;
-    padding-left: 0;}img {
+    padding-left: 0;
+}
+
+    img {
     display: block;
     max-width: 100%;
     height: auto;}.list {
@@ -40,7 +43,7 @@ ul {
 }
 
 .container {
-
+max-width: 1333px;
     padding: 0 15px;
     margin: 0 auto;
     /* outline: 1px solid red; */
@@ -62,18 +65,24 @@ ul {
 /*---------------- HEADER --------------------- */
 
 .header{
-    position: absolute;
+    background-color: #030303e0;
+    /* width: 100%;
     top:0;
-    left: 85px;
-    /* right: 85px; */
+    left: 13px;
+    right: 13px; */
+    /* position: fixed;
+    z-index: 10; */
+
 }
+
 .header-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     padding-left: 13px;
     padding-right: 13px;
 
 }
+
 
 .header-logo-icon {
     display: flex;
@@ -135,8 +144,11 @@ ul {
     background-size: cover;
 
     max-width: 1360px;
+    width: 100%;
+    height: 768px;
     margin: 0 auto;
 }
+
 
 .hero-title {
     margin-bottom: 24px;
@@ -146,11 +158,6 @@ ul {
     font-size: 55px;
     line-height: 1.2;
     color: var(--color-hero-text);
-}
-.container {
-}
-.hero-container {
-    position: relative;
 }
 
 .hero-subtitle {
